@@ -1,3 +1,6 @@
+please post issues here:
+https://github.com/YunoHost-Apps/rainloop_ynh/issues
+
 # Rainloop for YunoHost 
  
 * [rainloop](http://rainloop.net/ ): 1.9.4.394
