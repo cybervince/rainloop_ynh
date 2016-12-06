@@ -21,6 +21,10 @@ app=rainloop
 	# Use of latest community edition
 	sudo unzip -q ../sources/rainloop-community.zip -d $rainloop_path/
 
+    # Fix perms
+    find $rainloop_path -type d -exec chmod 755 {} \;
+    find $rainloop_path -type f -exec chmod 644 {} \;
+
 	# Update patch to auto load version
 	sudo cp ../sources/patch/index_auto_version.php $rainloop_path/index.php
 

@@ -45,7 +45,11 @@ app=rainloop
 
 	# Use of latest community edition
 	sudo unzip -q ../sources/rainloop-community.zip -d $rainloop_path/
-	
+
+    # Fix perms
+    find $rainloop_path -type d -exec chmod 755 {} \;
+    find $rainloop_path -type f -exec chmod 644 {} \;
+
 	# Install plugins
 	sudo mkdir -p $rainloop_path/data/_data_/_default_/plugins
 	sudo cp -rf ../sources/plugins/ynh-login-mapping $rainloop_path/data/_data_/_default_/plugins/.
