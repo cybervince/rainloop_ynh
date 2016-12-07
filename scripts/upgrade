@@ -21,10 +21,6 @@ app=rainloop
 	# Use of latest community edition
 	sudo unzip -q ../sources/rainloop-community.zip -d $rainloop_path/
 
-    # Fix perms
-    find $rainloop_path -type d -exec chmod 755 {} \;
-    find $rainloop_path -type f -exec chmod 644 {} \;
-
 	# Update patch to auto load version
 	sudo cp ../sources/patch/index_auto_version.php $rainloop_path/index.php
 
@@ -48,6 +44,8 @@ app=rainloop
 
 # Set permissions to rainloop directory
 	sudo chown -R www-data:www-data $final_path
+    	sudo find $final_path -type d -exec chmod 755 {} \;
+    	sudo find $final_path -type f -exec chmod 644 {} \;
 
 # Update Nginx configuration file
 	nginx_conf_file=/etc/nginx/conf.d/$domain.d/$app.conf
